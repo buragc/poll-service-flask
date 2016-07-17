@@ -28,6 +28,7 @@ def createdb(drop_first=False):
 @manager.command
 def test():
     """Runs unit tests in the code"""
+    createdb(drop_first=True)
     tests = subprocess.call(['python','-m', 'pytest','--cov=poll', 'tests/'])
     sys.exit(tests)
 
