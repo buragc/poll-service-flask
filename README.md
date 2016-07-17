@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/buragc/poll-service-flask.svg?branch=master)](https://travis-ci.org/buragc/poll-service-flask)
+--------------------
+
 # poll-svc
 poll-svc is a Python based, RESTFul, microservice back-end that implements polling scenarios backed by a SQLite DB.
 
