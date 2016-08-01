@@ -2,9 +2,9 @@ import os
 from flask import Flask
 from config import config
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_marshmallow import Marshmallow
 db = SQLAlchemy()
-
+ma = Marshmallow()
 from . import models
 
 
@@ -15,7 +15,7 @@ def create_app(config_name=None):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     db.init_app(app)
-
+    ma.init_app(app)
     # register the main blueprint
     from .pollsvc import main as main_blueprint
     app.register_blueprint(main_blueprint)
